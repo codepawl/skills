@@ -90,5 +90,6 @@ leans on them most. Reading map: Pacing and text, Camera, Figures and places, Ma
 - Look for: captions cut early, figures under captions, clipped labels, empty map areas, soft shots, floating or
   sunken figures, doors that open onto walls, vehicles backing along their route, black frames at cuts. In a live app
   film also look for: the cursor hidden or off target, UI over the action, selection rings wider than the object, a
-  followed unit that never reaches its event, and an event too short to see.
+  followed unit that never reaches its event, an event too short to see, motion that steps every few frames
+  (compare two consecutive frames), and surfaces that flicker or overlap (crop and zoom full-size frames).
 - Re-render only the time ranges you changed when the renderer supports it, then re-encode and re-check those ranges.

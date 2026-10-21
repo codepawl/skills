@@ -78,7 +78,12 @@ Work only in {{FOLDER}}/app. Stack: Vite + React + React Three Fiber (+ drei, @r
 Playwright as a dev dependency for checks and the film, all pinned to exact versions, serve on port
 {{PORT}}. A plain data model (sites, units, tasks, events) drives everything; the 3D view and the dashboard both read
 it, and a small seeded simulation advances it in real time so things move, statuses change and numbers tick. Load the
-GLBs with instancing for repeats, drive every moving part and clip from the simulation. Clicking an object selects it
+GLBs with instancing for repeats, drive every moving part and clip from the simulation. A fixed-step simulation
+keeps the previous and current pose of everything that moves and renders the pose interpolated by the leftover
+time, so motion and the follow camera change every frame (no stutter). No two surfaces share a plane and no two
+modules overlap: lay repeats end to end, build curves (track, viaduct deck) as continuous swept geometry, lift
+stacked floors a few centimetres apart, and set the camera near plane to about 0.5 m. Layered transparent surfaces
+(glass over glass) read as a smear; keep one glass layer and make the rest opaque. Clicking an object selects it
 and opens its card; clicking a list row flies the camera to it (and follows it if it moves); switching sites changes
 the world. Soft shadows, ambient occlusion, gentle bloom on lights, smooth camera moves. 60 fps at 1920x1080 on a
 mid-range GPU such as an RTX 3060.
