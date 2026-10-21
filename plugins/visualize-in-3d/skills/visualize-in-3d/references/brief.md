@@ -25,10 +25,15 @@ Say so in the report. If the topic is a real place, fetch its elevation as that 
 whether the user approved the download).
 
 Work only in {{FOLDER}}: Blender scripts in blender/, GLBs in app/public/assets/. Run Blender 5.x
-headless (--background --factory-startup --python) at low priority, one Blender at a time (wait if one runs).
+headless (--background --factory-startup --python <script>) at low priority, one Blender at a time (wait while another
+blender process runs). Use the full path to the Blender executable if `blender` is not on PATH, and send its output
+to a log file you read afterwards. Keep scratch files inside {{FOLDER}}, never in a folder another job shares.
 Blender gotchas: --factory-startup still loads the default cube, camera and light, so start each script with
 bpy.ops.wm.read_factory_settings(use_empty=True). Model each vehicle facing Blender -Y; the glTF exporter turns that
-into +Z, so lookAt works in three.js. Write the facing into ASSETS.md.
+into +Z, so lookAt works in three.js. Write the facing into ASSETS.md. glTF export of clips needs
+export_animation_mode="NLA_TRACKS" with each clip pushed to an NLA strip. bmesh.ops.bevel gives new faces material
+index 0, so set the materials of the bevel faces again on multi-material meshes. Blender renames duplicate names to
+.001, so prefix each child with its variant name (Car_Cab_Door_L, not Door_L).
 
 Model every asset procedurally with proper bevels and rounded edges, panel lines and small real details (vents,
 bolts, windows, wheels with hubs, lights, signage plates), clean topology with smooth shading and hardened edges,
@@ -36,7 +41,10 @@ UVs, PBR materials (small procedurally baked textures are fine), emissive where 
 material per state, so the app can toggle it. Two to four variants of anything that repeats more than about five
 times (vehicles, people, trees, buildings); one model is fine for unique structures. Moving parts are separate named objects or bones with their pivot at the
 origin (wheels, doors, fans, lifts, booms, bridges, character limbs); characters and animals get an armature with
-named clips. Keep the total under about 40 MB, one GLB per asset family so repeats can be instanced.
+named clips (vertex groups per bone, an Armature modifier, clips on NLA strips); render one posed frame of each clip
+to check the bone axes. Build repeating structures (track, platforms, sheds) on one module length that fits the real
+thing, and write it into ASSETS.md. Keep the total under about 40 MB (10 MB is typical), one GLB per asset family so repeats can be instanced.
+Set single-sided materials (backface culling on), so the exported glTF is not doubleSided.
 
 Verify: blender/preview.py renders a contact sheet per GLB (a few angles, back-face culling on, a 1.8 m figure block
 beside each asset for scale) to blender/previews/. For 3 to 6 main assets, also a compare sheet: reference (or
@@ -45,7 +53,9 @@ long objects; look at every sheet and fix wrong
 scale, wrong proportions, missing parts, bad normals, holes, floating parts. Write
 blender/ASSETS.md listing every GLB, its nodes, pivots, clips, real-world scale and where it goes. Rules:
 check GPU memory before GPU renders and use Workbench or CPU when it is full, no personal data. Write pass1_started_at.txt and
-pass1_finished_at.txt (UTC). Budget about 80 tool calls. Report the asset list with sizes, what you looked at, gaps.
+pass1_finished_at.txt (UTC). Budget about 80 tool calls; for a wide topic (more than about 6 asset families) budget 120. If the budget runs
+out, stop after a family is exported and checked, and list the families not built. Report the asset list with sizes,
+what you looked at, gaps.
 ```
 
 ## Pass 2: the app and the film
