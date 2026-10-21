@@ -51,7 +51,9 @@ beside each asset for scale) to blender/previews/. For 3 to 6 main assets, also 
 dimension blockout) and render in the same orthographic view and scale with a 1 m ruler, side by side, or stacked for
 long objects; look at every sheet and fix wrong
 scale, wrong proportions, missing parts, bad normals, holes, floating parts. Write
-blender/ASSETS.md listing every GLB, its nodes, pivots, clips, real-world scale and where it goes. Rules:
+blender/ASSETS.md with one table row per node: file, node name, pivot, facing, clips, real-world size and where it
+goes. Also write blender/catalog.json with the numbers the app needs (lengths, axle or wheel offsets, sensor heights).
+Check the facing in ASSETS.md against the exported file before handing over. Rules:
 check GPU memory before GPU renders and use Workbench or CPU when it is full, no personal data. Write pass1_started_at.txt and
 pass1_finished_at.txt (UTC). Budget about 80 tool calls; for a wide topic (more than about 6 asset families) budget 120. If the budget runs
 out, stop after a family is exported and checked, and list the families not built. Report the asset list with sizes,
@@ -71,7 +73,8 @@ opens for any clicked object with live fields and a progress bar; a timeline str
 the bottom right; zoom and camera buttons). Make your own name, logo and data; do not copy the reference's name,
 logo, text or exact layout. Never call it a game in the UI.
 
-Work only in {{FOLDER}}/app. Stack: Vite + React + React Three Fiber (+ drei), pinned exact versions, serve on port
+Work only in {{FOLDER}}/app. Stack: Vite + React + React Three Fiber (+ drei, @react-three/postprocessing with N8AO for ambient occlusion), and
+Playwright as a dev dependency for checks and the film, all pinned to exact versions, serve on port
 {{PORT}}. A plain data model (sites, units, tasks, events) drives everything; the 3D view and the dashboard both read
 it, and a small seeded simulation advances it in real time so things move, statuses change and numbers tick. Load the
 GLBs with instancing for repeats, drive every moving part and clip from the simulation. Clicking an object selects it
@@ -101,7 +104,8 @@ minimum distance and a height above the tallest model); selection rings far wide
 footprint, an ellipse for long things, at most about 1.3x); bare white or grey ground (give every surface a real
 material: asphalt, lane paint, verges, floors); a last shot where the site is small in a sea of empty ground.
 
-Write README.md, pass2_started_at.txt and pass2_finished_at.txt (UTC). Budget about 100 tool calls. Report: what was
+Record the film as {{SKILL_DIR}}/references/film.md "Live app films" says. Run the dev server as a background
+job and stop it when done. Write README.md, pass2_started_at.txt and pass2_finished_at.txt (UTC). Budget about 100 tool calls. Report: what was
 built, how to run it, screenshot and film paths, checks with numbers, honest gaps, and a one-line caption suggestion
 ("Claude built a live <place>, every <main assets> modeled in Blender and running in three.js").
 ```

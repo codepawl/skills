@@ -1,7 +1,7 @@
 # Film craft
 
 Rules learned from fixing real films made with this skill. They apply to every look; the dark documentary look
-leans on them most. Reading map: Pacing and text, Camera, Figures and places, Maps, Sound, Checks.
+leans on them most. Reading map: Pacing and text, Camera, Figures and places, Maps, Sound, Live app films, Checks.
 
 ## Pacing and text
 
@@ -55,10 +55,25 @@ leans on them most. Reading map: Pacing and text, Camera, Figures and places, Ma
 - Mix to about -19 LUFS (or -16 for a short social cut), true peak under -1 dBFS; sound effects stay audible under
   the music.
 
+## Live app films
+
+- Record with Playwright from a script in the app folder (`record_film.mjs`). An init script replaces
+  requestAnimationFrame, performance.now and Date.now with a virtual clock. While assets load, the clock advances by 0,
+  then the script pre-rolls the simulation a whole number of seconds and captures one screenshot per 1/30 s step.
+  Encode the frames with ffmpeg afterwards.
+- The simulation steps only from the virtual clock, never from wall time, so the same seed gives the same film.
+- Each beat's hero event (a unit reaching a booth, a truck under a gantry) must happen inside its beat. Spawn the hero
+  at a fixed simulation time so it lands 2 to 3 s into the beat, and check it on the sheet.
+- A plain-words strip carries one short line at a time, on the caption timer above.
+- A roof or canopy that hides the action from the camera angle goes semi-transparent (about 30% opacity).
+- Fly-to moves own the camera until they finish; a drag during a fly makes the camera jump.
+
 ## Checks
 
 - Make contact sheets of the final encode at 1 fps (`scripts/contact-sheet.sh`) and look at every sheet. Check the
   sheet files are newer than the video before trusting them; stale sheets hide regressions.
 - Look for: captions cut early, figures under captions, clipped labels, empty map areas, soft shots, floating or
-  sunken figures, doors that open onto walls, vehicles backing along their route, black frames at cuts.
+  sunken figures, doors that open onto walls, vehicles backing along their route, black frames at cuts. In a live app
+  film also look for: the cursor hidden or off target, UI over the action, selection rings wider than the object, a
+  followed unit that never reaches its event, and an event too short to see.
 - Re-render only the time ranges you changed when the renderer supports it, then re-encode and re-check those ranges.
