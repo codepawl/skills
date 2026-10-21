@@ -50,8 +50,8 @@ Set single-sided materials (backface culling on), so the exported glTF is not do
 
 Verify: blender/preview.py renders a contact sheet per GLB (a few angles, back-face culling on, a 1.8 m figure block
 beside each asset for scale) to blender/previews/. For 3 to 6 main assets, also a compare sheet: reference (or
-dimension blockout) and render in the same orthographic view and scale with a 1 m ruler, side by side, or stacked for
-long objects; look at every sheet and fix wrong
+dimension blockout) and render in the same orthographic view and scale with a ruler (1 m, or 10 m for assets over 40 m), side and top views,
+side by side or stacked for long objects; look at every sheet and fix wrong
 scale, wrong proportions, missing parts, bad normals, holes, floating parts. Write
 blender/ASSETS.md with one table row per node: file, node name, pivot, facing, clips, real-world size and where it
 goes. Also write blender/catalog.json with the numbers the app needs (lengths, axle or wheel offsets, sensor heights).
