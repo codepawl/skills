@@ -41,7 +41,8 @@ UVs, PBR materials (small procedurally baked textures are fine), emissive where 
 material per state, so the app can toggle it. Two to four variants of anything that repeats more than about five
 times (vehicles, people, trees, buildings); one model is fine for unique structures. Moving parts are separate named objects or bones with their pivot at the
 origin (wheels, doors, fans, lifts, booms, bridges, character limbs); characters and animals get an armature with
-named clips (vertex groups per bone, an Armature modifier, clips on NLA strips); render one posed frame of each clip
+named clips (the app plays clips per figure, or for crowds uses a few baked pose meshes per clip, since three.js
+instancing does not skin) (vertex groups per bone, an Armature modifier, clips on NLA strips); render one posed frame of each clip
 to check the bone axes. Build repeating structures (track, platforms, sheds) on one module length that fits the real
 thing, and write it into ASSETS.md. Keep the total under about 40 MB (10 MB is typical), one GLB per asset family so repeats can be instanced.
 Set single-sided materials (backface culling on), so the exported glTF is not doubleSided.

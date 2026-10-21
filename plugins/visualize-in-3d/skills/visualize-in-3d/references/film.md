@@ -62,6 +62,17 @@ leans on them most. Reading map: Pacing and text, Camera, Figures and places, Ma
   then the script pre-rolls the simulation a whole number of seconds and captures one screenshot per 1/30 s step.
   Encode the frames with ffmpeg afterwards.
 - The simulation steps only from the virtual clock, never from wall time, so the same seed gives the same film.
+  Step CSS animations and transitions with the same clock (document.getAnimations(), set currentTime), and read the
+  simulation time at the first captured frame instead of assuming the pre-roll landed exactly.
+- Plan the film from the simulation: a small script runs the seed forward and picks the hero unit and the times, so
+  the unit you click is moving and on screen at that moment.
+- During a follow or a hold, keep a slow real drag-orbit or wheel going. A followed unit that stops (a train at a
+  platform) otherwise gives repeated frames. Find them with ffmpeg mpdecimate plus showinfo and fix every gap over
+  0.2 s.
+- The subject must read at film size: the main moving unit fills at least a quarter of the frame width in the
+  opening and the follow beat. Context (a city, terrain) never outweighs the system the film is about.
+- When the system is hidden (underground, inside a building, behind a roof), cut it open: a clean section through
+  the ground or the walls, with the camera-side scenery removed or ghosted, and real materials on every cut face.
 - Each beat's hero event (a unit reaching a booth, a truck under a gantry) must happen inside its beat. Spawn the hero
   at a fixed simulation time so it lands 2 to 3 s into the beat, and check it on the sheet.
 - A plain-words strip carries one short line at a time, on the caption timer above.

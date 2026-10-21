@@ -28,5 +28,5 @@ ffmpeg -v error -i "$video" \
   -vf "fps=${frames_per_second},scale=${scale},drawtext=text='%{pts\:hms}':x=8:y=8:fontsize=18:fontcolor=white:box=1:boxcolor=black@0.6,tile=5x4:padding=4:color=black" \
   -q:v 3 "$output_folder/sheet_%02d.jpg"
 
-echo "Sheets in $output_folder (newer than $video: check before trusting them)"
+echo "Sheets in $output_folder"
 ls -l "$output_folder"/sheet_*.jpg
