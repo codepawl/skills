@@ -1,0 +1,13 @@
+{
+  "name": "visualize-in-3d",
+  "version": "0.1.0",
+  "description": "Turn hard-to-picture places, systems and events into a 3D world you can watch or click through: a live three.js app with a dashboard, or a documentary film, with models built in Blender from real references.",
+  "author": {
+    "name": "CodePawl",
+    "url": "https://codepawl.com"
+  },
+  "homepage": "https://github.com/codepawl/skills",
+  "repository": "https://github.com/codepawl/skills",
+  "license": "MIT",
+  "keywords": ["3d", "visualization", "three.js", "blender", "documentary", "simulation"]
+}
