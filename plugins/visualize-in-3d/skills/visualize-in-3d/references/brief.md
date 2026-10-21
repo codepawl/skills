@@ -31,7 +31,8 @@ to a log file you read afterwards. Keep scratch files inside {{FOLDER}}, never i
 Blender gotchas: --factory-startup still loads the default cube, camera and light, so start each script with
 bpy.ops.wm.read_factory_settings(use_empty=True). Model each vehicle facing Blender -Y; the glTF exporter turns that
 into +Z, so lookAt works in three.js. Write the facing into ASSETS.md. glTF export of clips needs
-export_animation_mode="NLA_TRACKS" with each clip pushed to an NLA strip. bmesh.ops.bevel gives new faces material
+export_animation_mode="NLA_TRACKS" with each clip pushed to an NLA strip. The exporter takes the rest pose from the last NLA
+track at its first frame, so push a clip that starts at rest last. bmesh.ops.bevel gives new faces material
 index 0, so set the materials of the bevel faces again on multi-material meshes. Blender renames duplicate names to
 .001, so prefix each child with its variant name (Car_Cab_Door_L, not Door_L).
 
