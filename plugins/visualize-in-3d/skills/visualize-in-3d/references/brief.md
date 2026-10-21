@@ -106,7 +106,9 @@ play (Space), speed 0.25x, 1x, 2x, 5x and 10x (keys - and +), and "Step" that ad
 paused. Speed changes how many fixed steps run per frame (fractional speeds accumulate), never the step length, so the
 simulation stays deterministic and the same seed gives the same result at every speed; the clock and every rate on
 the KPI cards follow simulation time. "Slow down at events" (on by default in the tour) eases to 0.25x for the
-second around a stage's key event and back. Store the camera presets in one data file, and expose them and the speed on
+second around a stage's key event and back. A preset may sit lower than the free camera's minimum height (platform eye level for train doors); flag it and
+skip the clearance rule only while that preset holds. Ease the slow-down in before the event from the known schedule,
+not after it fires. Store the camera presets in one data file, and expose them and the speed on
 window.__app for the checks and the film.
 
 UI rules: no small uppercase eyebrow labels above headings, no coloured left-border callouts, no divider lines
