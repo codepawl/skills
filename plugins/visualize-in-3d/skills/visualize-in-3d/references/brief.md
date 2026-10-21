@@ -88,7 +88,10 @@ modules overlap: lay repeats end to end, build curves (track, viaduct deck) as c
 stacked floors a few centimetres apart, and set the camera near plane to about 0.5 m. Ground layers each get
 their own height: grass -0.2 m, pads -0.06, road and floor modules 0, paint and decals +0.04. Where a pad or plaza
 replaces a road, leave the road modules out there instead of laying both. Run {{SKILL_DIR}}/scripts/coplanar-check.js
-on the built scene and fix every pair it lists before any screenshot. Layered transparent surfaces
+on the built scene and fix every pair it lists before any screenshot. Anything that must meet a vehicle (platform screen doors, jet bridges, loading docks, lock
+gates) is placed from the vehicle's own door or hatch positions where it stops, not from a repeating module, and the
+vehicle stops exactly on its mark; print the offset of every pair and keep each under 5 cm, and keep the side gap
+to the real one (about 0.1-0.2 m at a platform). Layered transparent surfaces
 (glass over glass) read as a smear; keep one glass layer and make the rest opaque. Clicking an object selects it
 and opens its card; clicking a list row flies the camera to it (and follows it if it moves); switching sites changes
 the world. Soft shadows, ambient occlusion, gentle bloom on lights, smooth camera moves. 60 fps at 1920x1080 on a
