@@ -33,7 +33,9 @@ bpy.ops.wm.read_factory_settings(use_empty=True). Model each vehicle facing Blen
 into +Z, so lookAt works in three.js. Write the facing into ASSETS.md. glTF export of clips needs
 export_animation_mode="NLA_TRACKS" with each clip pushed to an NLA strip. The exporter takes the rest pose from the last NLA
 track at its first frame, so push a clip that starts at rest last. bmesh.ops.bevel gives new faces material
-index 0, so set the materials of the bevel faces again on multi-material meshes. Blender renames duplicate names to
+index 0, so set the materials of the bevel faces again on multi-material meshes. An exact boolean can silently drop a concave prism; build
+such walls from convex parts. The exporter writes only materials that a mesh uses, so park unused state materials
+(lamp on/off) on a small hidden swatch node. Blender renames duplicate names to
 .001, so prefix each child with its variant name (Car_Cab_Door_L, not Door_L).
 
 Model every asset procedurally with proper bevels and rounded edges, panel lines and small real details (vents,
