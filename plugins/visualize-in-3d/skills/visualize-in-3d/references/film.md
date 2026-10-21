@@ -72,7 +72,11 @@ leans on them most. Reading map: Pacing and text, Camera, Figures and places, Ma
 - The subject must read at film size: the main moving unit fills at least a quarter of the frame width in the
   opening and the follow beat. Context (a city, terrain) never outweighs the system the film is about.
 - When the system is hidden (underground, inside a building, behind a roof), cut it open: a clean section through
-  the ground or the walls, with the camera-side scenery removed or ghosted, and real materials on every cut face.
+  the ground or the walls, with the camera-side scenery removed (semi-transparent buildings read as a muddy wash),
+  and real materials on every cut face.
+- Card fields match what the 3D view shows at that moment (a train boarding has its doors open in the card too).
+- The recording script always records the full length and writes its progress to a log file; a shorter run or a
+  piped output can hang and look like a crash.
 - Each beat's hero event (a unit reaching a booth, a truck under a gantry) must happen inside its beat. Spawn the hero
   at a fixed simulation time so it lands 2 to 3 s into the beat, and check it on the sheet.
 - A plain-words strip carries one short line at a time, on the caption timer above.
