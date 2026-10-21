@@ -82,6 +82,9 @@ leans on them most. Reading map: Pacing and text, Camera, Figures and places, Ma
 - A plain-words strip carries one short line at a time, on the caption timer above.
 - A roof or canopy that hides the action from the camera angle goes semi-transparent (about 30% opacity).
 - Fly-to moves own the camera until they finish; a drag during a fly makes the camera jump.
+- A beat that shows one stage starts from that stage's camera preset (press its number key or click it in the
+  stage bar), so the framing matches the app. Show one speed change on screen (2x or 5x, then back to 1x); the
+  virtual clock still advances 1/30 s per frame and the app runs more simulation steps in it.
 
 ## Checks
 

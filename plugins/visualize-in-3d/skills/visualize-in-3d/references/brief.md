@@ -94,12 +94,29 @@ and opens its card; clicking a list row flies the camera to it (and follows it i
 the world. Soft shadows, ambient occlusion, gentle bloom on lights, smooth camera moves. 60 fps at 1920x1080 on a
 mid-range GPU such as an RTX 3060.
 
+Stages and playback. The topic lists the key stages of the process (for a toll: queue, booth or reader, class set,
+paid, posted). Each stage gets a named camera preset framed on where that stage happens, close enough that the unit
+doing it fills about a quarter of the frame, from the side that shows the moving part (the boom, the tray, the hold
+door), never through a wall or roof. A stage bar lists them in process order with a number key each (1 to 9); picking
+one flies the camera there in about a second, and "Next stage" and "Previous stage" step through them. A "Tour"
+button plays the stages in order, holding each until its event has happened once, then moves on; any click or drag
+stops it. Per selected unit, "Follow" keeps the camera on it with three distances (close, mid, wide), and the card
+shows which stage it is in, and how long it has been in it. Playback controls sit in the timeline strip: pause and
+play (Space), speed 0.25x, 1x, 2x, 5x and 10x (keys - and +), and "Step" that advances one fixed step while
+paused. Speed changes how many fixed steps run per frame (fractional speeds accumulate), never the step length, so the
+simulation stays deterministic and the same seed gives the same result at every speed; the clock and every rate on
+the KPI cards follow simulation time. "Slow down at events" (on by default in the tour) eases to 0.25x for the
+second around a stage's key event and back. Store the camera presets in one data file, and expose them and the speed on
+window.__app for the checks and the film.
+
 UI rules: no small uppercase eyebrow labels above headings, no coloured left-border callouts, no divider lines
 between rows (spacing and subtle fills instead), every status starts with an icon whose shape differs per state, tabs
 are quiet text buttons, a card closes by clicking empty ground or Esc (no X on side panels).
 
 Verify with Playwright (Chromium with --enable-gpu --ignore-gpu-blocklist, plus --use-angle=d3d11 on Windows) at 1920x1080: the overview, a selected object with its card, a second site, a
-close-up, plus close-ups of each main asset type. Look at every one and fix clipping, overlapping UI, unreadable
+close-up, close-ups of each main asset type, and one per stage camera preset. Check that pause freezes every
+moving part, that 5x and 0.25x keep the same order of events as 1x for the same seed, and that the tour runs
+through every stage once. Look at every one and fix clipping, overlapping UI, unreadable
 text, z-fighting, floating or sunken objects, broken picking, anything that looks like programmer art. Measure fps.
 
 Film: 30 s 1920x1080 30 fps at shots/film.mp4 with a deterministic virtual clock (override requestAnimationFrame,
@@ -114,7 +131,8 @@ enough that dozens of moving units read); a beat that waits on the simulation an
 virtual clock so the followed event lands 2-3 s into its beat); a follow camera that ends inside a structure (keep a
 minimum distance and a height above the tallest model); selection rings far wider than the object (fit the
 footprint, an ellipse for long things, at most about 1.3x); bare white or grey ground (give every surface a real
-material: asphalt, lane paint, verges, floors); a last shot where the site is small in a sea of empty ground.
+material: asphalt, lane paint, verges, floors); a last shot where the site is small in a sea of empty ground. Use the stage presets for the film's beats instead of
+free camera moves when a beat shows one stage, and show a speed change (2x or 5x) once with the control on screen.
 
 Record the film as {{SKILL_DIR}}/references/film.md "Live app films" says. Run the dev server as a background
 job and stop it when done. Write README.md, pass2_started_at.txt and pass2_finished_at.txt (UTC). Budget about 100 tool calls. Report: what was

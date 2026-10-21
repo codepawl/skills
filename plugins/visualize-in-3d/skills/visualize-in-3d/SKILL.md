@@ -39,7 +39,8 @@ Paths use `{{WORK_DIR}}` for the folder where projects live (the current directo
 
 1. **Write the topic file** `{{WORK_DIR}}/TOPIC-<slug>.md` in the shape of the files in `examples/` (airport ramp,
    AI data center, agent office, wildfire valley): folder and port, sites, the world (real parts of the place and what
-   moves), data (units, tasks, fields), four KPIs, what the bottom timeline follows, made-up names, and the look (toy isometric when the user names none).
+   moves), data (units, tasks, fields), four KPIs, the key stages of the process in order (each with where it happens
+   and the event that marks it), what the bottom timeline follows, made-up names, and the look (toy isometric when the user names none).
    Research the real operation first and list the real object types the main assets stand for.
 2. **Pass 1, assets** with the Pass 1 brief (`references/brief.md`), or `references/no-blender.md` without Blender.
 3. **Pass 2, app and film** with the Pass 2 brief, once pass 1 is checked.
