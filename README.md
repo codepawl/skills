@@ -25,6 +25,16 @@ It has four modes:
   product you already have. It reads your real data from REST, Server-Sent Events, WebSocket or a CSV export through a
   field mapping file, so a new feed needs no code change. Tokens stay on your backend.
 
+| Live app | Documentary film |
+|---|---|
+| ![A canal lock app: a container ship selected, its card open on the right, and the stage timeline at the bottom](docs/images/live-app.jpg) | ![A documentary map: a red route from a farm to a hardware store across a county](docs/images/documentary.jpg) |
+| **Quick prototype** | **Live embed** |
+| ![An electric bus depot built from three.js primitives, with pantograph chargers over the buses](docs/images/quick-prototype.jpg) | ![A transit company dashboard with the 3D depot view inside it, a bus card open and a live status mark](docs/images/live-embed.jpg) |
+
+Every live app has stage cameras on number keys, a guided tour, follow camera and playback from 0.25x to 10x:
+
+![A metro app with the stage bar at the top and the speed controls at the bottom](docs/images/stages.jpg)
+
 There are four looks: toy isometric, point-cloud survey, photoreal terrain and dark documentary.
 
 ### Install
