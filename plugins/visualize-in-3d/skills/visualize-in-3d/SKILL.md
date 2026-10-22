@@ -1,6 +1,6 @@
 ---
 name: visualize-in-3d
-description: Make things that are hard to picture visible as a 3D world people can watch or play with - an operation (airport, data center, port, factory, hospital), a system, an event spreading over real land (wildfire, flood), or a story in time (a historical event, a case). Builds a live three.js app with a dashboard and a 30 s film, or a shot-by-shot documentary film, with models made in Blender from real references (or in three.js when Blender is missing). Use for "visualize how X works", "show this event on a 3D map", "a live 3D dashboard of how X runs", "a documentary-style 3D explainer".
+description: Make things that are hard to picture visible as a 3D world people can watch or play with - an operation (airport, data center, port, factory, hospital), a system, an event spreading over real land (wildfire, flood), or a story in time (a historical event, a case). Builds a live three.js app with a dashboard and a 30 s film, or a shot-by-shot documentary film, with models made in Blender from real references (or in three.js when Blender is missing), a quick no-Blender prototype for a leadership demo, or a component that embeds in an existing dashboard or product and runs on live company data. Use for "visualize how X works", "show this event on a 3D map", "a live 3D dashboard of how X runs", "a documentary-style 3D explainer", "a quick 3D prototype to show leadership", "put a live 3D view of our operation in our dashboard".
 license: MIT
 ---
 
@@ -9,7 +9,7 @@ license: MIT
 Some things are hard to understand from text, tables or a long video: how an airport turns a plane around in 45
 minutes, what an ER does with ten arrivals at once, where a data center's power goes, how a warehouse ships an order,
 how a case unfolded across a county, why a reactor exploded at 01:23. This skill turns them into a 3D world you can
-watch or click through, so the parts, the order and the cause can be seen at a glance. Two modes share one toolkit (models from real references, a
+watch or click through, so the parts, the order and the cause can be seen at a glance. Four modes share one toolkit (models from real references, a
 deterministic virtual clock, contact-sheet checks):
 
 - **Live app**: a system or an operation. A real dashboard around a 3D world, a seeded simulation moving units and
@@ -17,6 +17,11 @@ deterministic virtual clock, contact-sheet checks):
 - **Documentary film**: an event, a case or a piece of history told in order. A fact file, a map, block-built scenes
   with flat glowing figures, captions timed for reading, sound and a score by section. See
   `references/documentary.md`.
+- **Quick prototype**: a one-pass live app built from three.js primitives, with no Blender, for a demo to leaders
+  after about an hour of agent time. See `references/live-embed.md`.
+- **Live embed**: the live app as a web component or an iframe page inside an existing dashboard or product. It runs
+  on the company's real data through an adapter (REST, SSE, WebSocket or CSV) and a field mapping. See
+  `references/live-embed.md`.
 
 Pick the look in `references/looks.md` (toy isometric, point-cloud survey, photoreal terrain, dark documentary).
 Paths use `{{WORK_DIR}}` for the folder where projects live (the current directory unless the user names one) and
@@ -24,7 +29,7 @@ Paths use `{{WORK_DIR}}` for the folder where projects live (the current directo
 
 ## Before you start
 
-1. **Blender:** run `blender --version` (or look for it in the usual install folder). If it is missing, tell the user
+1. **Blender** (skip this for a quick prototype or an embed, which use primitives unless the user asks for Blender): run `blender --version` (or look for it in the usual install folder). If it is missing, tell the user
    it gives much better models and is a free download from blender.org, and ask whether to wait for the install or
    go on without it. Without Blender, build the models in three.js as `references/no-blender.md` describes and say
    in the report that model quality is lower.
