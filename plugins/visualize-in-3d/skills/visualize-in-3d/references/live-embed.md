@@ -24,9 +24,11 @@ Skip Pass 1 and do not ask about Blender. Build everything in one pass in `{{FOL
    (`real-objects.md`): proportions and part count still matter.
 3. **The look carries the quality.** Toy isometric from `looks.md`: soft shadows, N8AO, a warm key light, a ground
    with real materials, flat colours from one palette. Clean primitives under good light read as a design choice.
-4. **Data the leaders recognise.** Ask for a sample export (CSV or JSON) and its field names. With a sample, map it
+4. **A light UI, motion that explains, three themes**, as the Pass 2 brief says: few plain buttons, no default
+   dashboard, flows and stages animated, and panels added only when the user asks for them.
+5. **Data the leaders recognise.** Ask for a sample export (CSV or JSON) and its field names. With a sample, map it
    as in "Field mapping" below. Without one, seed a simulation with the real counts and rates from the topic research.
-5. **Done when** the overview, a clicked unit with its card and each stage preset look right in screenshots, it runs
+6. **Done when** the overview, a clicked unit with its card and each stage preset look right in screenshots, it runs
    at 60 fps, and `npm run build` gives a static folder that opens from any web server.
 
 Budget about 60 tool calls. Report the URL to run it, the screenshots, and what a full build adds (Blender models,

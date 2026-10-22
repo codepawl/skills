@@ -71,11 +71,22 @@ Build a live 3D app in the browser that makes a complex place or system easy to 
 (read it first), using the GLB asset pack in {{FOLDER}}/app/public/assets (read blender/ASSETS.md). Render the
 world, skin the UI and shape the film as the look named in the topic says (its section in
 {{SKILL_DIR}}/references/looks.md, and its reference files). In every look: a
-world with things moving on their own; pins and selection rings over objects; a real dashboard around the
-scene (top bar with search, site switcher, live clock and user; KPI cards top left; a detail card on the right that
-opens for any clicked object with live fields and a progress bar; a timeline strip at the bottom; tabs of lists at
-the bottom right; zoom and camera buttons). Make your own name, logo and data; do not copy the reference's name,
-logo, text or exact layout. Never call it a game in the UI.
+world with things moving on their own; pins and selection rings over objects; and a light UI that keeps the world
+the main thing on screen. Start from the smallest UI the topic needs: a name, the few numbers that matter (two to four
+KPIs), a detail card that opens for a clicked object, the stage bar and the playback controls. Buttons are few, large
+enough to hit, plainly labelled and do one thing each. Do not add a default dashboard (search, site switcher, user
+menu, list tabs, extra panels) unless the topic needs it or the user asks; when the user asks for a specific panel or
+control, build that one to their need. Make your own name, logo and data; do not copy the reference's name, logo,
+text or exact layout. Never call it a game in the UI.
+
+Motion that explains. Animate what the viewer must understand: the parts move as the process does, flows (goods,
+power, fluid, people, data) travel along their real paths as moving particles or arrows, the part a stage is about
+glows while the rest dims, numbers count to their new value, cards and the stage bar slide in rather than pop, and the
+camera eases between stages. Every motion shows a fact of the process; nothing moves only for decoration.
+
+Themes. Ship three themes switched by one quiet button and remembered per viewer: the look's own palette, a dark
+one and one more that suits the topic (blueprint, paper, night shift). A theme changes the scene's lights, ground and
+materials as well as the UI colours, and every theme keeps text contrast readable.
 
 Work only in {{FOLDER}}/app. Stack: Vite + React + React Three Fiber (+ drei, @react-three/postprocessing with N8AO for ambient occlusion), and
 Playwright as a dev dependency for checks and the film, all pinned to exact versions, serve on port
