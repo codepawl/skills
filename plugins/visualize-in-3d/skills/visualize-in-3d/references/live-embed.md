@@ -45,11 +45,13 @@ All data enters through one adapter interface, so the view never knows where it 
 // handlers.status({ state: 'live' | 'stale' | 'offline', lastUpdate }) drives the status mark.
 ```
 
-Ship these adapters, chosen by a `source` URL or option:
+Always ship `sim:`, `replay:` and the adapter for the source the user named. Add the others when the user asks for
+them. The adapter is chosen by a `source` URL or option:
 
 | Source | Adapter | Notes |
 |---|---|---|
-| `sim:` | seeded simulation | Default, and the only source for the film and the checks |
+| `sim:` | seeded simulation | Default when there is no sample data |
+| `replay:sample.jsonl` | replay on the page clock | Replays a recorded or sample feed deterministically; the source for the film. A `start` option seeks to an exact record time so a film beat lands on its event |
 | `https://…/snapshot.json` | polling REST | Poll every 2-10 s with `If-None-Match`; back off on errors |
 | `https://…/events` (SSE) or `wss://…` | stream | Reconnect with backoff; ask for a fresh snapshot after a reconnect |
 | `file:` or a dropped `.csv` | CSV | One row per unit or per event; for leaders with only a spreadsheet export |
@@ -127,4 +129,10 @@ data (driver names, patient names) is shown only when the feed already sends it 
 3. Put the component in a plain host page twice, at 1200x700 and 600x400, in light and dark host themes. Look at each
    screenshot for clipped UI, wrong colours and text that wraps.
 4. Unmount and mount it ten times and check that the WebGL context count and memory stay flat.
-5. Record a film of the host page with the component inside, driven by `sim:` on the virtual clock (`film.md`).
+5. Record a film of the host page with the component inside, driven by `replay:` (or `sim:`) on the virtual clock
+   (`film.md`). Keep the camera drifting slowly (about 0.05 rad/s) during holds: a still camera over a still frame
+   gives repeated frames.
+
+Trap from the first build: React StrictMode mounts effects twice, so movers and pins registered in an effect were
+registered twice and the pins hid. Make every registry idempotent (keyed by unit id) or leave StrictMode off in the
+component entry.
