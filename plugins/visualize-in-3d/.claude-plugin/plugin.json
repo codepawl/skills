@@ -6,8 +6,8 @@
     "name": "CodePawl",
     "url": "https://codepawl.com"
   },
-  "homepage": "https://github.com/codepawl/skills",
-  "repository": "https://github.com/codepawl/skills",
+  "homepage": "https://github.com/codepawl/viz3d",
+  "repository": "https://github.com/codepawl/viz3d",
   "license": "MIT",
   "keywords": ["3d", "visualization", "three.js", "blender", "documentary", "simulation"]
 }

@@ -27,21 +27,21 @@ There are four looks: toy isometric, point-cloud survey, photoreal terrain and d
 In Claude Code, add this repository as a plugin marketplace and install the plugin:
 
 ```text
-/plugin marketplace add codepawl/skills
+/plugin marketplace add codepawl/viz3d
 /plugin install visualize-in-3d@codepawl
 ```
 
 From a shell, the same two steps are:
 
 ```bash
-claude plugin marketplace add codepawl/skills
+claude plugin marketplace add codepawl/viz3d
 claude plugin install visualize-in-3d@codepawl
 ```
 
 For Claude Code, Codex, Cursor and other agents that read skill folders, use the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add codepawl/skills
+npx skills add codepawl/viz3d
 ```
 
 To install by hand, copy `plugins/visualize-in-3d/skills/visualize-in-3d` into your agent's skills folder (for Claude
