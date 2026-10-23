@@ -1,7 +1,7 @@
 {
   "name": "visualize-in-3d",
-  "version": "0.1.0",
-  "description": "Turn hard-to-picture places, systems and events into a 3D world you can watch or click through: a live three.js app with a dashboard, or a documentary film, with models built in Blender from real references.",
+  "version": "0.2.0",
+  "description": "Turn hard-to-picture places, systems, objects and events into a 3D world you can watch, learn from or click through: a live three.js app with a dashboard, a lesson app, or a documentary film, built from real layouts and models made from real references.",
   "author": {
     "name": "CodePawl",
     "url": "https://codepawl.com"
@@ -9,5 +9,14 @@
   "homepage": "https://github.com/codepawl/viz3d",
   "repository": "https://github.com/codepawl/viz3d",
   "license": "MIT",
-  "keywords": ["3d", "visualization", "three.js", "blender", "documentary", "simulation"]
+  "keywords": [
+    "3d",
+    "visualization",
+    "three.js",
+    "blender",
+    "documentary",
+    "simulation",
+    "education",
+    "openstreetmap"
+  ]
 }

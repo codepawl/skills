@@ -13,7 +13,7 @@ This skill has your agent turn questions
 like these into a 3D world you can watch or click through. The world is built from researched facts and from models
 made to real dimensions.
 
-It has four modes:
+It has five modes:
 
 - **Live app**: a three.js app with a dashboard around a 3D world of the place. A seeded simulation moves the units and
   the numbers. The agent records a 30 s film by driving the app with real clicks on a virtual clock.
@@ -24,12 +24,24 @@ It has four modes:
 - **Live embed**: the 3D view as a web component (`<viz3d-world>`) or an iframe page that goes into the dashboard or
   product you already have. It reads your real data from REST, Server-Sent Events, WebSocket or a CSV export through a
   field mapping file, so a new feed needs no code change. Tokens stay on your backend.
+- **Lesson app**: a step-by-step lesson on a real object at real size, such as an Arduino and a breadboard. Parts and
+  wires plug in as they do on a desk. The highlighted code line is what the board does right now. A free bench lets
+  the learner build their own circuit.
 
 | Live app | Documentary film |
 |---|---|
 | ![A canal lock app: a container ship selected, its card open on the right, and the stage timeline at the bottom](docs/images/live-app.jpg) | ![A documentary map: a red route from a farm to a hardware store across a county](docs/images/documentary.jpg) |
 | **Quick prototype** | **Live embed** |
 | ![An electric bus depot built from three.js primitives, with pantograph chargers over the buses](docs/images/quick-prototype.jpg) | ![A transit company dashboard with the 3D depot view inside it, a bus card open and a live status mark](docs/images/live-embed.jpg) |
+| **Lesson app** | |
+| ![An Arduino lesson: an LED fading on a breadboard, the current code line highlighted and the PWM signal drawn on the right](docs/images/lesson-app.jpg) | |
+
+A real place starts from its real layout. The agent draws the plan from OpenStreetMap data and
+builds the 3D world on the same coordinates, so the two line up. Things then work as they do in reality. Aircraft
+follow the taxiway centre lines and give way to each other. Jet bridges and service vehicles attach to the real doors
+and ports, and the agent measures every gap before it records.
+
+![Singapore Changi: the aerodrome plan drawn from OpenStreetMap on the left, the same layout in 3D on the right](docs/images/real-place.jpg)
 
 Every live app has stage cameras on number keys, a guided tour, follow camera and playback from 0.25x to 10x:
 
@@ -68,6 +80,8 @@ Ask for what you want to see, for example:
 
 - "Visualize how a container port works."
 - "Show how a city metro keeps its trains apart."
+- "Build Singapore Changi Airport from its real layout and show a turnaround."
+- "Make an Arduino lesson app that goes one circuit at a time."
 - "Make a documentary-style 3D film of the 1906 San Francisco earthquake."
 - "Make a quick 3D prototype of our warehouse for Monday's leadership review. Here is last week's CSV export."
 - "Put a live 3D view of our fleet in our ops dashboard. The feed is at /api/fleet/events."
