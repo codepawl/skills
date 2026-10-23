@@ -9,7 +9,7 @@ license: MIT
 Some things are hard to understand from text, tables or a long video: how an airport turns a plane around in 45
 minutes, what an ER does with ten arrivals at once, where a data center's power goes, how a warehouse ships an order,
 how a case unfolded across a county, why a reactor exploded at 01:23. This skill turns them into a 3D world you can
-watch or click through, so the parts, the order and the cause can be seen at a glance. Four modes share one toolkit (models from real references, a
+watch or click through, so the parts, the order and the cause can be seen at a glance. Five modes share one toolkit (models from real references, a
 deterministic virtual clock, contact-sheet checks):
 
 - **Live app**: a system or an operation. A real dashboard around a 3D world, a seeded simulation moving units and
@@ -22,6 +22,9 @@ deterministic virtual clock, contact-sheet checks):
 - **Live embed**: the live app as a web component or an iframe page inside an existing dashboard or product. It runs
   on the company's real data through an adapter (REST, SSE, WebSocket or CSV) and a field mapping. See
   `references/live-embed.md`.
+- **Lesson app** (a live app for learning how a thing works: an aircraft, a circuit board, an engine): lessons of
+  3 to 5 steps, one control each, the 3D built up part by part, and a "Build your own" sandbox. Use the live app
+  steps; the brief's paragraph on parts, flow overlays and sandboxes applies.
 
 Pick the look in `references/looks.md` (toy isometric, point-cloud survey, photoreal terrain, dark documentary).
 Paths use `{{WORK_DIR}}` for the folder where projects live (the current directory unless the user names one) and
@@ -46,7 +49,9 @@ Paths use `{{WORK_DIR}}` for the folder where projects live (the current directo
    AI data center, agent office, wildfire valley): folder and port, sites, the world (real parts of the place and what
    moves), data (units, tasks, fields), four KPIs, the key stages of the process in order (each with where it happens
    and the event that marks it), what the bottom timeline follows, made-up names, and the look (toy isometric when the user names none).
-   Research the real operation first and list the real object types the main assets stand for.
+   Research the real operation first and list the real object types the main assets stand for, and every activity
+   that happens there: each one must move in the world. For a real named place, follow "A real place" in
+   `references/real-objects.md` (open map data for the layout, exterior references for every landmark).
 2. **Pass 1, assets** with the Pass 1 brief (`references/brief.md`), or `references/no-blender.md` without Blender.
 3. **Pass 2, app and film** with the Pass 2 brief, once pass 1 is checked.
 4. **Check before showing anyone:** contact sheets of the film (`scripts/contact-sheet.sh`, sheets newer than the
@@ -56,7 +61,8 @@ Paths use `{{WORK_DIR}}` for the folder where projects live (the current directo
 
 ## Rules
 
-- Original designs only: no real brands, logos, liveries or characters.
+- No real brands, logos, liveries or characters. A real place the user names is built as it is (its layout and
+  buildings), still without operator logos or liveries.
 - Every main asset is modelled from a reference sheet of the real thing (`references/real-objects.md`); models from
   memory read as toys. This holds without Blender too.
 - A live app's film is driven by real input on a virtual clock; a documentary film is scripted shot by shot. Both

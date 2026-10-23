@@ -2,7 +2,7 @@
 
 Models drawn from memory come out as toys: wrong proportions, missing parts, generic silhouettes. Every main asset
 is modelled from a reference sheet of the real thing. Reading map: Reference sheet, Modelling to the sheet, Compare
-renders, Terrain, Sources and rules.
+renders, A real place, Terrain, Sources and rules.
 
 ## Reference sheet
 
@@ -35,6 +35,24 @@ writes `blender/previews/<asset>-compare.png` with the reference on the left and
 every compare sheet and fix what differs: proportions, missing parts, part counts (wheels, windows, legs), thickness
 of thin parts. Toy tells to fix: oversized wheels, round blobs where there should be hard edges, missing railings
 and stairs, uniform colour, no wear, parts floating apart.
+
+## A real place
+
+When the user names a real place (an airport, a port, a campus), build that place, not a look-alike:
+
+- **Layout from open data:** OpenStreetMap through the Overpass API (`out geom`, ODbL: credit "© OpenStreetMap
+  contributors" wherever it shows), projected to metres around the site centre. Use official charts and plans to
+  check names and positions only; most are copyrighted, so never show or copy them.
+- **The plan is not the place.** A layout extruded from a drawing reads as unfinished. Before modelling, collect
+  exterior references for every landmark in frame: aerial and street photos, elevations, sections, published
+  dimensions and the roof form, facade rhythm and colours. Write one `PART_<landmark>.md` per landmark and build
+  to it.
+- **Fill the frame with what is really there:** landside roads, car parks, trees, water, the transit line, the
+  service areas. No empty ground where the real site has something.
+- **The place works.** List every activity the topic research found (for an airport: landings and take-offs,
+  taxiing, the stand turnaround with jet bridge, pushback, fuel, baggage and catering, the people mover, kerbside
+  traffic) and show each one moving on the clock. A still layout is a drawing, not a visualization.
+- Real buildings and their shapes are fine; operator logos, airline liveries and brand names still stay off.
 
 ## Terrain
 
