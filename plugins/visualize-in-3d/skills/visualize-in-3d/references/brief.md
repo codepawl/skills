@@ -92,6 +92,15 @@ direction and speed from the real quantity, colour by its level, and a value lab
 by doing, add a "Build your own" mode: a parts tray, parts that snap to real positions, connections drawn by dragging,
 Run and Stop, and a simple check that says why something does not work.
 
+Things work as they do in reality, whatever the topic. Every mover follows its real guidance (a lane, a rail, a
+taxiway or runway centre line, a conveyor, a pipe run, a cable tray) with turns, speeds and acceleration the real
+machine can make: no sharp kinks, no sideways sliding, no passing through solids. Every connection meets its real
+connection point and stays on it while things move: a gangway or jet bridge on the door sill, a hose on its port, a
+plug in its socket, a coupler on its hitch, a wire in its hole, a belt end on the hatch. Put each attach point in the
+model's metadata (named empties exported with the GLB) and drive the connector to it, never to a guessed offset. A
+debug check measures every connector gap while attached (under 0.1 m at site scale, under 1 mm at bench scale) and
+draws each mover's trace over its real path from above; run both before recording.
+
 Themes. Ship three themes switched by one quiet button and remembered per viewer: the look's own palette, a dark
 one and one more that suits the topic (blueprint, paper, night shift). A theme changes the scene's lights, ground and
 materials as well as the UI colours, and every theme keeps text contrast readable.

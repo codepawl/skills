@@ -1,7 +1,7 @@
 # Modelling from real references
 
 Models drawn from memory come out as toys: wrong proportions, missing parts, generic silhouettes. Every main asset
-is modelled from a reference sheet of the real thing. Reading map: Reference sheet, Modelling to the sheet, Compare
+is modelled from a reference sheet of the real thing. Reading map: Reference sheet, Modelling to the sheet, Hero models, Compare
 renders, A real place, Terrain, Sources and rules.
 
 ## Reference sheet
@@ -28,6 +28,16 @@ or the film selects):
 - Scale the details too: railings, stairs, doors and windows sized from a 1.8 m person placed next to the model.
 - Colours and materials from the reference photos (sampled, then shifted to the look's palette), not invented.
 
+## Hero models
+
+The objects the viewer watches most (the aircraft at an airport, the ship at a port, the board in a circuit lesson)
+decide whether the whole world reads as real. Build each hero in Blender from reference drawings or dimensioned
+views. Give it the real silhouette and the parts that make it recognisable (for an aircraft: nose cone and cockpit
+windows, swept tapered wings with dihedral, nacelles on pylons, tail at true size, door panels). Check its
+proportions on a compare sheet and export its attach points as named empties. A hero made of a few boxes and cylinders is not done.
+Without Blender, spend the extra effort in three.js (lathe and extruded profiles from the drawings, not boxes) and
+say in the report that the heroes are below Blender quality.
+
 ## Compare renders
 
 `blender/preview.py` also renders each main asset from the same angle as its side and three-quarter references and
@@ -49,9 +59,9 @@ When the user names a real place (an airport, a port, a campus), build that plac
   to it.
 - **Fill the frame with what is really there:** landside roads, car parks, trees, water, the transit line, the
   service areas. No empty ground where the real site has something.
-- **The place works.** List every activity the topic research found (for an airport: landings and take-offs,
-  taxiing, the stand turnaround with jet bridge, pushback, fuel, baggage and catering, the people mover, kerbside
-  traffic) and show each one moving on the clock. A still layout is a drawing, not a visualization.
+- **The place works.** List every activity the topic research found (an airport's landings,
+  taxiing and turnarounds, a port's ship calls and crane cycles, a hospital's arrivals and transfers, a factory's line,
+  forklifts and shift change) and show each one moving on the clock. A still layout is a drawing, not a visualization.
 - Real buildings and their shapes are fine. Operator logos, airline liveries and brand names still stay off.
 
 ## Terrain
