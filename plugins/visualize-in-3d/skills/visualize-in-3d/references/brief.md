@@ -99,7 +99,7 @@ connection point and stays on it while things move: a gangway or jet bridge on t
 plug in its socket, a coupler on its hitch, a wire in its hole, a belt end on the hatch. Put each attach point in the
 model's metadata (named empties exported with the GLB) and drive the connector to it, never to a guessed offset. A
 debug check measures every connector gap while attached (under 0.1 m at site scale, under 1 mm at bench scale) and
-draws each mover's trace over its real path from above; run both before recording.
+draws each mover's trace over its real path from above; run both before recording. Movers that share space follow the real right-of-way rules, never pass through each other: an aircraft is cleared to push back only when the taxilane is free, trains keep block separation, ships wait at a lock, vehicles queue behind each other. Reserve the shared segments in the simulation, and have the check report the smallest distance between any two movers over a long run (zero overlaps) and how long they waited, so traffic still flows. Look at every scene where two movers meet.
 
 Themes. Ship three themes switched by one quiet button and remembered per viewer: the look's own palette, a dark
 one and one more that suits the topic (blueprint, paper, night shift). A theme changes the scene's lights, ground and
