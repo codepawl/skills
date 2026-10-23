@@ -1,9 +1,4 @@
-# CodePawl skills
-
-Agent skills we use to build things with Claude Code. Each skill is a folder with a `SKILL.md` entry point and the
-references it reads.
-
-## visualize-in-3d
+# viz3d
 
 Some things are hard to understand from text, a spreadsheet or a two-hour documentary. How does an airport turn a plane
 around in 45 minutes? What does an ER do with ten arrivals at once? How does a metro keep trains two minutes apart, or
@@ -49,7 +44,7 @@ Every live app has stage cameras on number keys, a guided tour, follow camera an
 
 There are four looks: toy isometric, point-cloud survey, photoreal terrain and dark documentary.
 
-### Install
+## Install
 
 In Claude Code, add this repository as a plugin marketplace and install the plugin:
 
@@ -74,7 +69,7 @@ npx skills add codepawl/viz3d
 To install by hand, copy `plugins/visualize-in-3d/skills/visualize-in-3d` into your agent's skills folder (for Claude
 Code, `~/.claude/skills/`).
 
-### Use
+## Use
 
 Ask for what you want to see, for example:
 
@@ -101,7 +96,7 @@ your feed:
 that only takes a URL, use `embed.html?source=...` in an iframe. To test without your real system, the skill's
 `scripts/mock-feed.mjs` replays a JSONL file as a live feed.
 
-### What you need
+## What you need
 
 - Node 20 or later, with Playwright and Chromium for recording.
 - ffmpeg on your PATH.
