@@ -114,7 +114,7 @@ keeps the previous and current pose of everything that moves and renders the pos
 time, so motion and the follow camera change every frame (no stutter). No two surfaces share a plane and no two
 modules overlap: lay repeats end to end, build curves (track, viaduct deck) as continuous swept geometry, lift
 stacked floors a few centimetres apart, and set the camera near plane to about 0.5 m. Ground layers each get
-their own height: grass -0.2 m, pads -0.06, road and floor modules 0, paint and decals +0.04. Where a pad or plaza
+their own height: grass -0.2 m, pads -0.06, road and floor modules 0, paint and decals +0.04. Walls and vehicles follow the same rule: a sign, lamp or poster stands 4 cm proud of the glass or panel behind it, never at the same depth. Where a pad or plaza
 replaces a road, leave the road modules out there instead of laying both. Run {{SKILL_DIR}}/scripts/coplanar-check.js
 on the built scene and fix every pair it lists before any screenshot. Anything that must meet a vehicle (platform screen doors, jet bridges, loading docks, lock
 gates) is placed from the vehicle's own door or hatch positions where it stops, not from a repeating module, and the
