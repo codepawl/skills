@@ -84,6 +84,14 @@ power, fluid, people, data) travel along their real paths as moving particles or
 glows while the rest dims, numbers count to their new value, cards and the stage bar slide in rather than pop, and the
 camera eases between stages. Every motion shows a fact of the process; nothing moves only for decoration.
 
+Nothing appears out of thin air. A part or a cable that joins the scene comes from somewhere real (a bench, a tray, a
+truck, a rack), travels there and is fitted as a person would fit it: a jumper wire is picked up, carried and pushed
+into its hole, its cable a continuous curve re-solved from both ends every frame. A flow overlay (current, heat,
+pressure, data) is off by default behind one toggle; when on it is easy to read: large particles with short trails,
+direction and speed from the real quantity, colour by its level, and a value label on each branch. Where people learn
+by doing, add a "Build your own" mode: a parts tray, parts that snap to real positions, connections drawn by dragging,
+Run and Stop, and a simple check that says why something does not work.
+
 Themes. Ship three themes switched by one quiet button and remembered per viewer: the look's own palette, a dark
 one and one more that suits the topic (blueprint, paper, night shift). A theme changes the scene's lights, ground and
 materials as well as the UI colours, and every theme keeps text contrast readable.
